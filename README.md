@@ -1,6 +1,6 @@
 # Tkinter Calculator
 
-### Scientific Calculator using Python's library Tkinter 
+### Scientific calculator using Python's library Tkinter 
 
 <p align="center">
    <img src="imgs/sci_calc.png">
