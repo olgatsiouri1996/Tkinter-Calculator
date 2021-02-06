@@ -6,7 +6,7 @@
    <img width="240" height="340"src="imgs/sci_calc.png">
 </p>
 
-#### Some explanations for each button and the function which represents are the following
+#### Some explanations for each button and the function which represents are the following : 
 
 - **1st Row**
 <p align="center">
