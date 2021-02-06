@@ -3,7 +3,7 @@
 ### Scientific calculator using Python's library Tkinter 
 
 <p align="center">
-   <img src="imgs/sci_calc.png">
+   <img width="240" height="320"src="imgs/sci_calc.png">
 </p>
 
 #### Some explanations for each button and the function which represents are the following
