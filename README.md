@@ -3,14 +3,14 @@
 ### Scientific calculator using Python's library Tkinter 
 
 <p align="center">
-   <img width="240" height="340"src="imgs/sci_calc.png">
+   <img width="240" height="340"src="img/sci_calc.png">
 </p>
 
 #### Some explanations for each button and the function which represents are the following : 
 
 - **1st Row**
 <p align="center">
-   <img src="imgs/1st_row.png">
+   <img src="img/1st_row.png">
 </p>
   
 1. **abs** : The absolute value of a number (e.g. abs(-5) = 5).
@@ -23,7 +23,7 @@
 
 - **2nd Row**
 <p align="center">
-   <img src="imgs/2nd_row.png">
+   <img src="img/2nd_row.png">
 </p>
 
 1. **sin** : Sine of an angle &theta; in degrees (e.g. sin(90)=1).
@@ -35,7 +35,7 @@
 
 - **3rd Row**
 <p align="center">
-   <img src="imgs/3rd_row.png">
+   <img src="img/3rd_row.png">
 </p>
 
 1. **x<sup>2</sup>** : x raised to the power of 2 (e.g. 4<sup>2</sup> = 16).
@@ -46,7 +46,7 @@
 
 - **4th Row**
 <p align="center">
-   <img src="imgs/4th_row.png">
+   <img src="img/4th_row.png">
 </p>
 
 1. **<sup>2</sup>√** : Square root of a number (e.g. <sup>2</sup>√144 = 12).
@@ -57,18 +57,18 @@
 
 - **5th Row**
 <p align="center">
-   <img src="imgs/5th_row.png">
+   <img src="img/5th_row.png">
 </p>
 
 1. **(** : Left parenthesis.
 2. **)** : Right parenthesis.
 3. **±** : Change the sign of a number.
 4. **%** : Find the percentage of a number (e.g. 5% = 0.05).
-5. **e<sup>x</sup>** : Expotential function (e.g. e<sup>2</sup>=approx 7.389 ).
+5. **log<sub>2</sub>** : The logarithm of a number with base 2.
 
 - **6th,7th,8th,9th Row**
 <p align="center">
-   <img src="imgs/6789th_rows.png">
+   <img src="img/6789th_rows.png">
 </p>
 
 In these rows are :  
@@ -80,5 +80,21 @@ In these rows are :
 -> Button **AC** to delete the whole entry.  
 -> **EXP** : Multiply any number with powers of 10 (e.g. 2 * 10 ** 3 = 2000).  
 
+- **10th Row**
+<p align="center">
+   <img src="img/10th_row.png">
+</p>
+
+1. **fibo** : The nth fibonacci number.
+2. **erf** : The error function erf(x) of a number x.
+3. **e<sup>x</sup>** : Expotential function (e.g. e<sup>2</sup>=approx 7.389).
+4. **gamma** : The gamma(x) function of a number x.
+5. **lngamma** : The ln(gamma(x)) function of a number x.
+
+You can copy/paste numbers from/to the calculator.
+For the factorial, trigonometic and logarithmic functions and functions of row 10 you need to type or paste the number and then press the button.
+For windows users with intel CPU machines you can download the GUI executable from the bin folder.
+
 ## Author
 * **Konstantinos Thanos**
+* **Olga Tsiouri**
