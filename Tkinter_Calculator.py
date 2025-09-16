@@ -41,79 +41,121 @@ def factorial(n):
 
 def fact_func():
     global calc_operator
-    result = str(factorial(int(calc_operator)))
-    calc_operator = result
-    text_input.set(result)
+    try:
+        value = int(float(text_input.get()))
+        result = str(factorial(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Function to calculate trigonometric numbers of an angle
 def trig_sin():
     global calc_operator
-    result = str(math.sin(math.radians(int(calc_operator))))
-    calc_operator = result
-    text_input.set(result)
+    try:
+        value = float(text_input.get())
+        result = str(math.sin(math.radians(value)))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 def trig_cos():
     global calc_operator
-    result = str(math.cos(math.radians(int(calc_operator))))
-    calc_operator = result
-    text_input.set(result)
+    try:
+        value = float(text_input.get())
+        result = str(math.cos(math.radians(value)))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 def trig_tan():
     global calc_operator
-    result = str(math.tan(math.radians(int(calc_operator))))
-    calc_operator = result
-    text_input.set(result)
+    try:
+        value = float(text_input.get())
+        result = str(math.tan(math.radians(value)))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 def trig_cot():
     global calc_operator
-    result = str(1/math.tan(math.radians(int(calc_operator))))
-    calc_operator = result
-    text_input.set(result)
+    try:
+        value = float(text_input.get())
+        result = str(1 / math.tan(math.radians(value)))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Function to find the square root of a number
 def square_root():
     global calc_operator
-    if int(calc_operator)>=0:
-        temp = str(eval(calc_operator+'**(1/2)'))
-        calc_operator = temp
-    else:
-        temp = "ERROR"
-    text_input.set(temp)
+    try:
+        value = float(text_input.get())
+        if value < 0:
+            text_input.set("ERROR")
+        result = str(math.sqrt(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Function to find the third root of a number
 def third_root():
     global calc_operator
-    if int(calc_operator)>=0:
-        temp = str(eval(calc_operator+'**(1/3)'))
-        calc_operator = temp
-    else:
-        temp = "ERROR"
-    text_input.set(temp)
+    try:
+        value = float(text_input.get())
+        result = str(value ** (1/3))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Function to change the sign of number
 def sign_change():
     global calc_operator
-    if calc_operator[0]=='-':
-        temp = calc_operator[1:]
-    else:
-        temp = '-'+calc_operator
-    calc_operator = temp
-    text_input.set(temp)    
+    try:
+        value = float(text_input.get())
+        result = str(-value)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Function to calculate the percentage of a number
 def percent():
     global calc_operator
-    temp = str(eval(calc_operator+'/100'))
-    calc_operator = temp
-    text_input.set(temp)
+    try:
+        value = float(text_input.get())
+        result = str(value / 100)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Funtion to find the result of an operation
 def button_equal():
     global calc_operator
-    temp_op = str(eval(calc_operator))
-    text_input.set(temp_op)
-    calc_operator = temp_op
-
+    try:
+        expression = text_input.get()   # always use what's actually in the Entry
+        result = str(eval(expression))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Fibonnaci for positive and negative integers
 def fibo(n):
@@ -133,50 +175,115 @@ def fibo(n):
 # Function for fibonacci button that rounds non integers
 def fibonacci():
     global calc_operator
-    result = str(fibo(round(float(calc_operator))))
-    calc_operator = result
-    text_input.set(result)
+    try:
+        value = round(float(text_input.get()))
+        result = str(fibo(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Function for error function button
 def erfunc():
     global calc_operator
-    result = str(math.erf(float(calc_operator)))
-    calc_operator = result
-    text_input.set(result)
+    try:
+        value = float(text_input.get())
+        result = str(math.erf(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 # Function for gamma function button
 def gamma_func():
     global calc_operator
     try:
-        if float(calc_operator) <= 0 and float(calc_operator).is_integer():
-            temp = "ERROR"
-        else:
-            temp = str(math.gamma(float(calc_operator)))
-            calc_operator = temp
-    except OverflowError:
-            temp = "ERROR"
-    text_input.set(temp)
+        value = float(text_input.get())
+        if value <= 0 and value.is_integer():
+            text_input.set("ERROR")
+        result = str(math.gamma(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
 
 # Function for ln(gamma(x)) function button
 def lgamma_func():
     global calc_operator
     try:
-        if float(calc_operator) <= 0 and float(calc_operator).is_integer():
-            temp = "ERROR"
-        else:
-            temp = str(math.lgamma(float(calc_operator)))
-            calc_operator = temp
-    except OverflowError:
-            temp = "ERROR"
-    text_input.set(temp)
+        value = float(text_input.get())
+        if value <= 0 and value.is_integer():
+            text_input.set("ERROR")
+        result = str(math.lgamma(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
+# e^x function
+def expfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(math.exp(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# ln(x) function
+def lnfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        if value <= 0:
+            text_input.set("ERROR")
+        result = str(math.log(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# log2(x) function
+def log2func():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        if value <= 0:
+            text_input.set("ERROR")
+        result = str(math.log2(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# log10(x) function
+def log10func():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        if value <= 0:
+            text_input.set("ERROR")
+        result = str(math.log10(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 '''
 Variables
 '''
 sin, cos, tan = math.sin, math.cos, math.tan
-log, ln = math.log10, math.log
-e = math.exp
+e = math.e
 p = math.pi
 E = '*10**'
 
@@ -188,7 +295,7 @@ calc_operator = ""
 text_input = StringVar()
 
 text_display = Entry(tk_calc, font=('sans-serif', 20, 'bold'), textvariable=text_input,
-                     bd=5, insertwidth = 5, bg='#BBB', justify='right').grid(columnspan=5, padx = 10, pady = 15)
+                     bd=5, insertwidth = 5, bg='#BBB', justify='right').grid(columnspan=6, padx = 10, pady = 15)
 
 button_params = {'bd':5, 'fg':'#BBB', 'bg':'#3C3636', 'font':('sans-serif', 20, 'bold')}
 button_params_main = {'bd':5, 'fg':'#000', 'bg':'#BBB', 'font':('sans-serif', 20, 'bold')}
@@ -211,7 +318,7 @@ factorial_button = Button(tk_calc, button_params, text='x!',
                    command=fact_func).grid(row=1, column=3, sticky="nsew")
 # Euler's number e
 eulers_num = Button(tk_calc, button_params, text='e',
-                    command=lambda:button_click(str(math.exp(1)))).grid(row=1, column=4, sticky="nsew")
+                    command=lambda:button_click(str(math.e))).grid(row=1, column=4, sticky="nsew")
 
 #--2nd row--
 # Sine of an angle in degrees
@@ -259,10 +366,10 @@ nth_root = Button(tk_calc, button_params, text='\u221A',
                   command=lambda:button_click('**(1/')).grid(row=4, column=2, sticky="nsew")
 # Logarithm of a number with base 10
 log_base10 = Button(tk_calc, button_params, text='log\u2081\u2080', font=('sans-serif', 16, 'bold'),
-                   command=lambda:button_click('log(')).grid(row=4, column=3, sticky="nsew")
+                   command=log10func).grid(row=4, column=3, sticky="nsew")
 # Logarithm of a number with base e (ln)
 log_basee = Button(tk_calc, button_params, text='ln',
-                   command=lambda:button_click('ln(')).grid(row=4, column=4, sticky="nsew")
+                   command=lnfunc).grid(row=4, column=4, sticky="nsew")
 
 #--5th row--
 # Add a left parentheses
@@ -277,9 +384,10 @@ signs = Button(tk_calc, button_params, text='\u00B1',
 # Transform number to percentage
 percentage = Button(tk_calc, button_params, text='%',
                command=percent).grid(row=5, column=3, sticky="nsew")
-# Calculate the function e^x
-ex = Button(tk_calc, button_params, text='e^x',
-               command=lambda:button_click('e(')).grid(row=5, column=4, sticky="nsew")
+
+# Logarithm of a number with base 10
+log_base2 = Button(tk_calc, button_params, text='log\u2082', font=('sans-serif', 16, 'bold'),
+                   command=log2func).grid(row=5, column=4, sticky="nsew")
 
 #--6th row--
 button_7 = Button(tk_calc, button_params_main, text='7',
@@ -332,6 +440,9 @@ Fibo = Button(tk_calc, button_params_main, text='Fibo(x)', fg= '#db701f', bg= '#
 
 erf = Button(tk_calc, button_params_main, text='erf(x)', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
                command=erfunc).grid(row=10, column=1, sticky="nsew")
+
+# Calculate the function e^x
+ex = Button(tk_calc, button_params, text='e^x', command=expfunc).grid(row=10, column=2, sticky="nsew")
 
 gam = Button(tk_calc, button_params_main, text='gamma(x)', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
                command=gamma_func).grid(row=10, column=3, sticky="nsew")
