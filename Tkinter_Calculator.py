@@ -1,15 +1,15 @@
-#======================#
-#  Tkinter Calculator  #
-#----------------------#
-#  Konstantinos Thanos #
-#   Mathematician, MSc #
-#======================#
+#==============================#
+#      Tkinter Calculator      #
+#------------------------------#
+#      Konstantinos Thanos     #
+#      Mathematician, MSc      #
+#      Olga Tsiouri, MSc       #
+# Biochemist & Biotechnologist #
+#==============================#
 
 # Import packages
 from tkinter import *
 import math
-import numpy as np
-
 '''
 Functions
 '''
@@ -113,6 +113,63 @@ def button_equal():
     temp_op = str(eval(calc_operator))
     text_input.set(temp_op)
     calc_operator = temp_op
+
+
+# Fibonnaci for positive and negative integers
+def fibo(n):
+    if n == 0:
+        return 0
+    elif n > 0:
+        a, b = 0, 1
+        for _ in range(n-1):
+            a, b = b, a + b
+        return b
+    else:  # negative n (Negafibonacci)
+        a, b = 0, 1
+        for _ in range(abs(n)-1):
+            a, b = b, a + b
+        return (-1)**(abs(n)+1) * b
+
+# Function for fibonacci button that rounds non integers
+def fibonacci():
+    global calc_operator
+    result = str(fibo(round(float(calc_operator))))
+    calc_operator = result
+    text_input.set(result)
+
+# Function for error function button
+def erfunc():
+    global calc_operator
+    result = str(math.erf(float(calc_operator)))
+    calc_operator = result
+    text_input.set(result)
+
+# Function for gamma function button
+def gamma_func():
+    global calc_operator
+    try:
+        if float(calc_operator) <= 0 and float(calc_operator).is_integer():
+            temp = "ERROR"
+        else:
+            temp = str(math.gamma(float(calc_operator)))
+            calc_operator = temp
+    except OverflowError:
+            temp = "ERROR"
+    text_input.set(temp)
+
+# Function for ln(gamma(x)) function button
+def lgamma_func():
+    global calc_operator
+    try:
+        if float(calc_operator) <= 0 and float(calc_operator).is_integer():
+            temp = "ERROR"
+        else:
+            temp = str(math.lgamma(float(calc_operator)))
+            calc_operator = temp
+    except OverflowError:
+            temp = "ERROR"
+    text_input.set(temp)
+
 
 '''
 Variables
@@ -269,6 +326,18 @@ exp = Button(tk_calc, button_params_main, text='EXP', font=('sans-serif', 16, 'b
              command=lambda:button_click(E)).grid(row=9, column=2, sticky="nsew")
 equal = Button(tk_calc, button_params_main, text='=',
                command=button_equal).grid(row=9, columnspan=2, column=3, sticky="nsew")
+
+Fibo = Button(tk_calc, button_params_main, text='Fibo(x)', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
+               command=fibonacci).grid(row=10, column=0, sticky="nsew")
+
+erf = Button(tk_calc, button_params_main, text='erf(x)', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
+               command=erfunc).grid(row=10, column=1, sticky="nsew")
+
+gam = Button(tk_calc, button_params_main, text='gamma(x)', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
+               command=gamma_func).grid(row=10, column=3, sticky="nsew")
+
+lgam = Button(tk_calc, button_params_main, text='ln(gamma(x))', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
+               command=lgamma_func).grid(row=10, column=4, sticky="nsew")
 
 
 tk_calc.mainloop()
