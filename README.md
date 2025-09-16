@@ -91,10 +91,21 @@ In these rows are :
 4. **gamma** : The gamma(x) function of a number x.
 5. **lngamma** : The ln(gamma(x)) function of a number x.
 
-You can copy/paste numbers from/to the calculator.
-For the factorial, trigonometic and logarithmic functions and functions of row 10 you need to type or paste the number and then press the button.
-For windows users with intel CPU machines you can download the GUI executable from the bin folder.
+- **11nd Row**
+<p align="center">
+   <img src="img/11th_row.png">
+</p>
 
-## Author
+1. **sinh** : Hyperbolic sine of an angle &theta; in degrees.
+2. **cosh** : Hyperbolic cosine of an angle &theta; in degrees.
+3. **tanh** : Hyperbolic tangent of an angle &theta; in degrees.
+4. **deg** :  Conversion of radians to degrees.
+5. **rad** :  Conversion of degrees to radians.
+
+- You can copy/paste numbers from/to the calculator.  
+- For the factorial, trigonometic and logarithmic functions and functions of rows 10 and 11 you need to type or paste the number and then press the button.  
+- For windows users with intel CPU machines you can download the GUI executable from the bin folder.  
+
+## Authors
 * **Konstantinos Thanos**
 * **Olga Tsiouri**

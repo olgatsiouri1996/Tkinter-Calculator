@@ -84,6 +84,39 @@ def trig_tan():
         text_input.set("ERROR")
         calc_operator = ""
 
+def trig_sinh():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(math.sinh(math.radians(value)))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+def trig_cosh():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(math.cosh(math.radians(value)))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+def trig_tanh():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(math.tanh(math.radians(value)))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
 def trig_cot():
     global calc_operator
     try:
@@ -279,6 +312,30 @@ def log10func():
         text_input.set("ERROR")
         calc_operator = ""
 
+# degrees2radiant function
+def radfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(math.radians(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# degrees2radiant function
+def degfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(math.degrees(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
 '''
 Variables
 '''
@@ -435,20 +492,39 @@ exp = Button(tk_calc, button_params_main, text='EXP', font=('sans-serif', 16, 'b
 equal = Button(tk_calc, button_params_main, text='=',
                command=button_equal).grid(row=9, columnspan=2, column=3, sticky="nsew")
 
+#--10th row--
+# Fibonacci function
 fib = Button(tk_calc, button_params_main, text='fibo', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=fibonacci).grid(row=10, column=0, sticky="nsew")
-
+# Error function
 erf = Button(tk_calc, button_params_main, text='erf', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=erfunc).grid(row=10, column=1, sticky="nsew")
-
 # Calculate the function e^x
-ex = Button(tk_calc, button_params, text='e^x', command=expfunc).grid(row=10, column=2, sticky="nsew")
-
+ex = Button(tk_calc, button_params, text='e^x', fg= '#db701f', bg= '#3C3636', command=expfunc).grid(row=10, column=2, sticky="nsew")
+# Gamma function
 gam = Button(tk_calc, button_params_main, text='gamma', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=gamma_func).grid(row=10, column=3, sticky="nsew")
-
+# ln Gamma function
 lgam = Button(tk_calc, button_params_main, text='lngamma', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=lgamma_func).grid(row=10, column=4, sticky="nsew")
 
+#--11th row--
+# Hyperbolic sine of an angle in degrees
+sineh = Button(tk_calc, button_params, text='sinh', fg= '#db701f', bg= '#3C3636',
+             command=trig_sinh).grid(row=11, column=0, sticky="nsew")
+# Hyperbolic cosine of an angle in degrees
+cosineh = Button(tk_calc, button_params, text='cosh', fg= '#db701f', bg= '#3C3636',
+             command=trig_cosh).grid(row=11, column=1, sticky="nsew")
+# Hyperbolic tangent of an angle in degrees
+tangenth = Button(tk_calc, button_params, text='tanh', fg= '#db701f', bg= '#3C3636',
+             command=trig_tanh).grid(row=11, column=2, sticky="nsew")
+
+# Hyperbolic tangent of an angle in degrees
+degs = Button(tk_calc, button_params, text='deg', fg= '#db701f', bg= '#3C3636',
+             command=degfunc).grid(row=11, column=3, sticky="nsew")
+
+# Hyperbolic tangent of an angle in degrees
+rads = Button(tk_calc, button_params, text='rad', fg= '#db701f', bg= '#3C3636',
+             command=radfunc).grid(row=11, column=4, sticky="nsew")
 
 tk_calc.mainloop()
