@@ -435,19 +435,19 @@ exp = Button(tk_calc, button_params_main, text='EXP', font=('sans-serif', 16, 'b
 equal = Button(tk_calc, button_params_main, text='=',
                command=button_equal).grid(row=9, columnspan=2, column=3, sticky="nsew")
 
-Fibo = Button(tk_calc, button_params_main, text='Fibo(x)', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
+fib = Button(tk_calc, button_params_main, text='fibo', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=fibonacci).grid(row=10, column=0, sticky="nsew")
 
-erf = Button(tk_calc, button_params_main, text='erf(x)', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
+erf = Button(tk_calc, button_params_main, text='erf', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=erfunc).grid(row=10, column=1, sticky="nsew")
 
 # Calculate the function e^x
 ex = Button(tk_calc, button_params, text='e^x', command=expfunc).grid(row=10, column=2, sticky="nsew")
 
-gam = Button(tk_calc, button_params_main, text='gamma(x)', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
+gam = Button(tk_calc, button_params_main, text='gamma', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=gamma_func).grid(row=10, column=3, sticky="nsew")
 
-lgam = Button(tk_calc, button_params_main, text='ln(gamma(x))', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 15, 'bold'),
+lgam = Button(tk_calc, button_params_main, text='lngamma', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=lgamma_func).grid(row=10, column=4, sticky="nsew")
 
 
