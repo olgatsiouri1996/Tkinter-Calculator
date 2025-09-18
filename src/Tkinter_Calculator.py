@@ -3,6 +3,7 @@
 #------------------------------#
 #      Konstantinos Thanos     #
 #      Mathematician, MSc      #
+#------------------------------#
 #      Olga Tsiouri, MSc       #
 # Biochemist & Biotechnologist #
 #==============================#
@@ -111,17 +112,6 @@ def trig_tanh():
     try:
         value = float(text_input.get())
         result = str(math.tanh(math.radians(value)))
-        text_input.set(result)
-        calc_operator = result
-    except Exception:
-        text_input.set("ERROR")
-        calc_operator = ""
-
-def trig_cot():
-    global calc_operator
-    try:
-        value = float(text_input.get())
-        result = str(1 / math.tan(math.radians(value)))
         text_input.set(result)
         calc_operator = result
     except Exception:
@@ -336,6 +326,66 @@ def degfunc():
         text_input.set("ERROR")
         calc_operator = ""
 
+# x^2 function
+def squarefunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str((value)**2)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# x^3 function
+def cubefunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str((value)**3)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# 1/x function
+def invfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str((value)**(-1))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# 10^x function
+def base10func():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(10**(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# 2^x function
+def base2func():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(2**(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
 '''
 Variables
 '''
@@ -387,9 +437,10 @@ cosine = Button(tk_calc, button_params, text='cos',
 # Tangent of an angle in degrees
 tangent = Button(tk_calc, button_params, text='tan',
              command=trig_tan).grid(row=2, column=2, sticky="nsew")
-# Cotangent of an angle in degrees
-cotangent = Button(tk_calc, button_params, text='cot',
-             command=trig_cot).grid(row=2, column=3, sticky="nsew")
+# Powers of 2
+two_powers = Button(tk_calc, button_params, text='2^x', font=('sans-serif', 15, 'bold'),
+                     command=base2func).grid(row=2, column=3, sticky="nsew")
+
 # Pi(3.14...) number 
 pi_num = Button(tk_calc, button_params, text='π',
                 command=lambda:button_click(str(math.pi))).grid(row=2, column=4, sticky="nsew")
@@ -397,26 +448,26 @@ pi_num = Button(tk_calc, button_params, text='π',
 #--3rd row--
 # Power of 2
 second_power = Button(tk_calc, button_params, text='x\u00B2',
-             command=lambda:button_click('**2')).grid(row=3, column=0, sticky="nsew")
+             command=squarefunc).grid(row=3, column=0, sticky="nsew")
 # Power of 3
 third_power = Button(tk_calc, button_params, text='x\u00B3',
-             command=lambda:button_click('**3')).grid(row=3, column=1, sticky="nsew")
+             command=cubefunc).grid(row=3, column=1, sticky="nsew")
 # Power of n
 nth_power = Button(tk_calc, button_params, text='x^n',
              command=lambda:button_click('**')).grid(row=3, column=2, sticky="nsew")
 # Inverse number
 inv_power = Button(tk_calc, button_params, text='x\u207b\xb9',
-             command=lambda:button_click('**(-1)')).grid(row=3, column=3, sticky="nsew")
+             command=invfunc).grid(row=3, column=3, sticky="nsew")
 # Powers of 10
 tens_powers = Button(tk_calc, button_params, text='10^x', font=('sans-serif', 15, 'bold'),
-                     command=lambda:button_click('10**')).grid(row=3, column=4, sticky="nsew")
+                     command=base10func).grid(row=3, column=4, sticky="nsew")
 
 #--4th row--
 # Square root of a number
-square_root = Button(tk_calc, button_params, text='\u00B2\u221A',
+sq_root = Button(tk_calc, button_params, text='\u00B2\u221A',
                      command=square_root).grid(row=4, column=0, sticky="nsew")
 # Third root of a number
-third_root = Button(tk_calc, button_params, text='\u00B3\u221A',
+trd_root = Button(tk_calc, button_params, text='\u00B3\u221A',
                     command=third_root).grid(row=4, column=1, sticky="nsew")
 # nth root of a number
 nth_root = Button(tk_calc, button_params, text='\u221A',
@@ -494,37 +545,37 @@ equal = Button(tk_calc, button_params_main, text='=',
 
 #--10th row--
 # Fibonacci function
-fib = Button(tk_calc, button_params_main, text='fibo', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
+fib = Button(tk_calc, button_params_main, text='fibo', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=fibonacci).grid(row=10, column=0, sticky="nsew")
 # Error function
-erf = Button(tk_calc, button_params_main, text='erf', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
+erf = Button(tk_calc, button_params_main, text='erf', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=erfunc).grid(row=10, column=1, sticky="nsew")
 # Calculate the function e^x
-ex = Button(tk_calc, button_params, text='e^x', fg= '#db701f', bg= '#3C3636', command=expfunc).grid(row=10, column=2, sticky="nsew")
+ex = Button(tk_calc, button_params, text='e^x', fg= '#BBB', bg= '#3C3636', command=expfunc).grid(row=10, column=2, sticky="nsew")
 # Gamma function
-gam = Button(tk_calc, button_params_main, text='gamma', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
+gam = Button(tk_calc, button_params_main, text='gamma', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=gamma_func).grid(row=10, column=3, sticky="nsew")
 # ln Gamma function
-lgam = Button(tk_calc, button_params_main, text='lngamma', fg= '#db701f', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
+lgam = Button(tk_calc, button_params_main, text='lngamma', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 18, 'bold'),
                command=lgamma_func).grid(row=10, column=4, sticky="nsew")
 
 #--11th row--
 # Hyperbolic sine of an angle in degrees
-sineh = Button(tk_calc, button_params, text='sinh', fg= '#db701f', bg= '#3C3636',
+sineh = Button(tk_calc, button_params, text='sinh', fg= '#BBB', bg= '#3C3636',
              command=trig_sinh).grid(row=11, column=0, sticky="nsew")
 # Hyperbolic cosine of an angle in degrees
-cosineh = Button(tk_calc, button_params, text='cosh', fg= '#db701f', bg= '#3C3636',
+cosineh = Button(tk_calc, button_params, text='cosh', fg= '#BBB', bg= '#3C3636',
              command=trig_cosh).grid(row=11, column=1, sticky="nsew")
 # Hyperbolic tangent of an angle in degrees
-tangenth = Button(tk_calc, button_params, text='tanh', fg= '#db701f', bg= '#3C3636',
+tangenth = Button(tk_calc, button_params, text='tanh', fg= '#BBB', bg= '#3C3636',
              command=trig_tanh).grid(row=11, column=2, sticky="nsew")
 
 # Hyperbolic tangent of an angle in degrees
-degs = Button(tk_calc, button_params, text='deg', fg= '#db701f', bg= '#3C3636',
+degs = Button(tk_calc, button_params, text='deg', fg= '#BBB', bg= '#3C3636',
              command=degfunc).grid(row=11, column=3, sticky="nsew")
 
 # Hyperbolic tangent of an angle in degrees
-rads = Button(tk_calc, button_params, text='rad', fg= '#db701f', bg= '#3C3636',
+rads = Button(tk_calc, button_params, text='rad', fg= '#BBB', bg= '#3C3636',
              command=radfunc).grid(row=11, column=4, sticky="nsew")
 
 tk_calc.mainloop()

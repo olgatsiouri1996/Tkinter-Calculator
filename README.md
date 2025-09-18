@@ -29,7 +29,7 @@
 1. **sin** : Sine of an angle &theta; in degrees (e.g. sin(90)=1).
 2. **cos** : Cosine of an angle &theta; in degrees (e.g. cos(180)=-1).
 3. **tan** : Tangent of an angle &theta; in degrees (e.g. tan(45)=1).
-4. **cot** : Cotangent of an angle &theta; in degrees (e.g. cot(45) = 1/tan(45) = 1).
+4. **2<sup>x</sup>** : Powers of 2 (e.g. 2<sup>3</sup> = 8).
 5. **π** : Archimedes' constant defined as the ratio of a circle's circumference to its diameter.  
 &nbsp; &nbsp; &nbsp; &nbsp;It is approximately equal to 3.14159.
 
@@ -102,9 +102,13 @@ In these rows are :
 4. **deg** :  Conversion of radians to degrees.
 5. **rad** :  Conversion of degrees to radians.
 
+- In order to run the calculator download and open the file from the `bin/` folder(for windows users with intel CPUs only).
 - You can copy/paste numbers from/to the calculator.  
-- For the factorial, trigonometic and logarithmic functions and functions of rows 10 and 11 you need to type or paste the number and then press the button.  
-- For windows users with intel CPU machines you can download the GUI executable from the bin folder.  
+- For all functions except **x<sup>n</sup>**, **√**, **EXP**  you need to type or paste the number and then press the button for a result to appear(you don't need to press `=`).    
+- When you type **x<sup>n</sup>** `**` will appear when on the left you type the base and on the right the exponent and then you need to press `=` to compute.
+- When you type **√** `**(1/` will appear when on the left you type the base and on the right the exponent divided by 1 e.g. `256**(1/4)` for a root of 4 and then you need to press `=` to compute.  
+- When you type **EXP** `*10**` will appear when on the left you type the base and on the right the exponent e.g. `3*10**8` and then you need to press `=` to compute. 
+- For all arithmetic operations (+, -, multiplication via * and division via /) as well as **mod** and **div** you need to press `=` to get the result  
 
 ## Authors
 * **Konstantinos Thanos**
