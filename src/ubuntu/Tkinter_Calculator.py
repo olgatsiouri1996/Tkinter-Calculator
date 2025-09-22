@@ -10,6 +10,7 @@
 
 # Import packages
 from tkinter import *
+import tkinter.font as tkfont
 import math
 '''
 Functions
@@ -395,17 +396,24 @@ p = math.pi
 E = '*10**'
 
 tk_calc = Tk()
-tk_calc.configure(bg="#293C4A", bd=10)
+tk_calc.configure(bg="#293C4A", bd=6)
 tk_calc.title("Scientific Calculator")
+
+# Get the actual default Tk font family
+default_font = tkfont.nametofont("TkDefaultFont")
+
+# Create a bigger version of it
+big_font = default_font.copy()
+big_font.configure(size=14, weight="bold")
 
 calc_operator = ""
 text_input = StringVar()
 
-text_display = Entry(tk_calc, font=('sans-serif', 20, 'bold'), textvariable=text_input,
+text_display = Entry(tk_calc, font=big_font, textvariable=text_input,
                      bd=5, insertwidth = 5, bg='#BBB', justify='right').grid(columnspan=6, padx = 10, pady = 15)
 
-button_params = {'bd':5, 'fg':'#BBB', 'bg':'#3C3636', 'font':('sans-serif', 20, 'bold')}
-button_params_main = {'bd':5, 'fg':'#000', 'bg':'#BBB', 'font':('sans-serif', 20, 'bold')}
+button_params = {'bd':2, 'fg':'#BBB', 'bg':'#3C3636', 'font':big_font}
+button_params_main = {'bd':2, 'fg':'#000', 'bg':'#BBB', 'font':big_font}
 
 '''
 Buttons
@@ -438,7 +446,7 @@ cosine = Button(tk_calc, button_params, text='cos',
 tangent = Button(tk_calc, button_params, text='tan',
              command=trig_tan).grid(row=2, column=2, sticky="nsew")
 # Powers of 2
-two_powers = Button(tk_calc, button_params, text='2^x', font=('sans-serif', 20, 'bold'),
+two_powers = Button(tk_calc, button_params, text='2^x', font=big_font,
                      command=base2func).grid(row=2, column=3, sticky="nsew")
 
 # Pi(3.20...) number 
@@ -459,7 +467,7 @@ nth_power = Button(tk_calc, button_params, text='x^n',
 inv_power = Button(tk_calc, button_params, text='1/x',
              command=invfunc).grid(row=3, column=3, sticky="nsew")
 # Powers of 10
-tens_powers = Button(tk_calc, button_params, text='10^x', font=('sans-serif', 20, 'bold'),
+tens_powers = Button(tk_calc, button_params, text='10^x', font=big_font,
                      command=base10func).grid(row=3, column=4, sticky="nsew")
 
 #--4th row--
@@ -473,7 +481,7 @@ trd_root = Button(tk_calc, button_params, text='cbrt',
 nth_root = Button(tk_calc, button_params, text='nthrt',
                   command=lambda:button_click('**(1/')).grid(row=4, column=2, sticky="nsew")
 # Logarithm of a number with base 10
-log_base10 = Button(tk_calc, button_params, text='log10', font=('sans-serif', 20, 'bold'),
+log_base10 = Button(tk_calc, button_params, text='log10', font=big_font,
                    command=log10func).grid(row=4, column=3, sticky="nsew")
 # Logarithm of a number with base e (ln)
 log_basee = Button(tk_calc, button_params, text='ln',
@@ -494,7 +502,7 @@ percentage = Button(tk_calc, button_params, text='%',
                command=percent).grid(row=5, column=3, sticky="nsew")
 
 # Logarithm of a number with base 10
-log_base2 = Button(tk_calc, button_params, text='log2', font=('sans-serif', 20, 'bold'),
+log_base2 = Button(tk_calc, button_params, text='log2', font=big_font,
                    command=log2func).grid(row=5, column=4, sticky="nsew")
 
 #--6th row--
@@ -504,9 +512,9 @@ button_8 = Button(tk_calc, button_params_main, text='8',
                   command=lambda:button_click('8')).grid(row=6, column=1, sticky="nsew")
 button_9 = Button(tk_calc, button_params_main, text='9',
                   command=lambda:button_click('9')).grid(row=6, column=2, sticky="nsew")
-delete_one = Button(tk_calc, bd=2, fg='#000', font=('sans-serif', 20, 'bold'),
+delete_one = Button(tk_calc, bd=2, fg='#000', font=big_font,
               text='DEL', command=button_delete, bg='#db701f').grid(row=6, column=3, sticky="nsew")
-delete_all = Button(tk_calc, bd=2, fg='#000', font=('sans-serif', 20, 'bold'),
+delete_all = Button(tk_calc, bd=2, fg='#000', font=big_font,
               text='AC', command=button_clear_all, bg='#db701f').grid(row=6, column=4, sticky="nsew")
 
 #--7th row--
@@ -538,25 +546,25 @@ button_0 = Button(tk_calc, button_params_main, text='0',
                   command=lambda:button_click('0')).grid(row=9, column=0, sticky="nsew")
 point = Button(tk_calc, button_params_main, text='.',
                command=lambda:button_click('.')).grid(row=9, column=1, sticky="nsew")
-exp = Button(tk_calc, button_params_main, text='EXP', font=('sans-serif', 20, 'bold'),
+exp = Button(tk_calc, button_params_main, text='EXP', font=big_font,
              command=lambda:button_click(E)).grid(row=9, column=2, sticky="nsew")
 equal = Button(tk_calc, button_params_main, text='=',
                command=button_equal).grid(row=9, columnspan=2, column=3, sticky="nsew")
 
 #--10th row--
 # Fibonacci function
-fib = Button(tk_calc, button_params_main, text='fibo', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 20, 'bold'),
+fib = Button(tk_calc, button_params_main, text='fibo', fg= '#BBB', bg= '#3C3636', font=big_font,
                command=fibonacci).grid(row=10, column=0, sticky="nsew")
 # Error function
-erf = Button(tk_calc, button_params_main, text='erf', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 20, 'bold'),
+erf = Button(tk_calc, button_params_main, text='erf', fg= '#BBB', bg= '#3C3636', font=big_font,
                command=erfunc).grid(row=10, column=1, sticky="nsew")
 # Calculate the function e^x
 ex = Button(tk_calc, button_params, text='e^x', fg= '#BBB', bg= '#3C3636', command=expfunc).grid(row=10, column=2, sticky="nsew")
 # Gamma function
-gam = Button(tk_calc, button_params_main, text='gamma', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 20, 'bold'),
+gam = Button(tk_calc, button_params_main, text='gamma', fg= '#BBB', bg= '#3C3636', font=big_font,
                command=gamma_func).grid(row=10, column=3, sticky="nsew")
 # ln Gamma function
-lgam = Button(tk_calc, button_params_main, text='lngamma', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 20, 'bold'),
+lgam = Button(tk_calc, button_params_main, text='lngamma', fg= '#BBB', bg= '#3C3636', font=big_font,
                command=lgamma_func).grid(row=10, column=4, sticky="nsew")
 
 #--11th row--
