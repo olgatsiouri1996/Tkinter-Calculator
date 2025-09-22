@@ -1,17 +1,16 @@
-This is a manual for windows users. for ubuntu users see [here](UBUNTU.md)
 # Tkinter Calculator
 
 ### Scientific calculator using Python's library Tkinter 
 
 <p align="center">
-   <img width="240" height="340"src="img/windows/sci_calc.png">
+   <img width="472" height="575"src="img/ubuntu/sci_calc.png">
 </p>
 
 #### Some explanations for each button and the function which represents are the following : 
 
 - **1st Row**
 <p align="center">
-   <img src="img/windows/1st_row.png">
+   <img src="img/ubuntu/1st_row.png">
 </p>
   
 1. **abs** : The absolute value of a number (e.g. abs(-5) = 5).
@@ -24,52 +23,51 @@ This is a manual for windows users. for ubuntu users see [here](UBUNTU.md)
 
 - **2nd Row**
 <p align="center">
-   <img src="img/windows/2nd_row.png">
+   <img src="img/ubuntu/2nd_row.png">
 </p>
 
 1. **sin** : Sine of an angle &theta; in degrees (e.g. sin(90)=1).
 2. **cos** : Cosine of an angle &theta; in degrees (e.g. cos(180)=-1).
 3. **tan** : Tangent of an angle &theta; in degrees (e.g. tan(45)=1).
-4. **2<sup>x</sup>** : Powers of 2 (e.g. 2<sup>3</sup> = 8).
-5. **π** : Archimedes' constant defined as the ratio of a circle's circumference to its diameter.  
-&nbsp; &nbsp; &nbsp; &nbsp;It is approximately equal to 3.14159.
+4. **2^x** : Powers of 2 (e.g. 2<sup>3</sup> = 8).
+5. **pi** : Archimedes' constant defined as the ratio of a circle's circumference to its diameter. It is approximately equal to 3.14159.
 
 - **3rd Row**
 <p align="center">
-   <img src="img/windows/3rd_row.png">
+   <img src="img/ubuntu/3rd_row.png">
 </p>
 
-1. **x<sup>2</sup>** : x raised to the power of 2 (e.g. 4<sup>2</sup> = 16).
-2. **x<sup>3</sup>** : x raised to the power of 3 (e.g. 5<sup>3</sup> = 125).
-3. **x<sup>n</sup>** : x raised to any power (e.g. 2<sup>4</sup> = 16 ).
-4. **x<sup>-1</sup>** : x raised to the power of (-1). The inverse of number x (e.g. 2<sup>-1</sup> = 0.5).
-5. **10<sup>x</sup>** : Powers of 10 (e.g. 10<sup>3</sup> = 1000).
+1. **x^2** : x raised to the power of 2 (e.g. 4<sup>2</sup> = 16).
+2. **x^3** : x raised to the power of 3 (e.g. 5<sup>3</sup> = 125).
+3. **x^n** : x raised to any power (e.g. 2<sup>4</sup> = 16 ).
+4. **1/x** : e.g. 1/2 = 0.5 (where x = 2).
+5. **10^x** : Powers of 10 (e.g. 10<sup>3</sup> = 1000).
 
 - **4th Row**
 <p align="center">
-   <img src="img/windows/4th_row.png">
+   <img src="img/ubuntu/4th_row.png">
 </p>
 
-1. **<sup>2</sup>√** : Square root of a number (e.g. <sup>2</sup>√144 = 12).
-2. **<sup>3</sup>√** : Cube root of a number (e.g. <sup>3</sup>√8 = 2).
-3. **√**  : Any root of a number (e.g. <sup>4</sup>√16 = 2).
-4. **log<sub>10</sub>** : The logarithm of a number with base 10 (e.g. log<sub>10</sub>1000 = 3).
+1. **sqrt** : Square root of a number (e.g. <sup>2</sup>√144 = 12).
+2. **cbrt** : Cube root of a number (e.g. <sup>3</sup>√8 = 2).
+3. **nthrt**  : Any root of a number (e.g. <sup>4</sup>√16 = 2).
+4. **log10** : The logarithm of a number with base 10 (e.g. log<sub>10</sub>1000 = 3).
 5. **ln** : The logarithm of a number with base e (e.g. log<sub>e</sub>e = ln e = 1).
 
 - **5th Row**
 <p align="center">
-   <img src="img/windows/5th_row.png">
+   <img src="img/ubuntu/5th_row.png">
 </p>
 
 1. **(** : Left parenthesis.
 2. **)** : Right parenthesis.
 3. **±** : Change the sign of a number.
 4. **%** : Find the percentage of a number (e.g. 5% = 0.05).
-5. **log<sub>2</sub>** : The logarithm of a number with base 2.
+5. **log2** : The logarithm of a number with base 2.
 
 - **6th,7th,8th,9th Row**
 <p align="center">
-   <img src="img/windows/6789th_rows.png">
+   <img src="img/ubuntu/6789th_rows.png">
 </p>
 
 In these rows are :  
@@ -83,18 +81,18 @@ In these rows are :
 
 - **10th Row**
 <p align="center">
-   <img src="img/windows/10th_row.png">
+   <img src="img/ubuntu/10th_row.png">
 </p>
 
 1. **fibo** : The nth fibonacci number.
 2. **erf** : The error function erf(x) of a number x.
-3. **e<sup>x</sup>** : Expotential function (e.g. e<sup>2</sup>=approx 7.389).
+3. **e^x** : Expotential function (e.g. e<sup>2</sup>=approx 7.389).
 4. **gamma** : The gamma(x) function of a number x.
 5. **lngamma** : The ln(gamma(x)) function of a number x.
 
 - **11nd Row**
 <p align="center">
-   <img src="img/windows/11th_row.png">
+   <img src="img/ubuntu/11th_row.png">
 </p>
 
 1. **sinh** : Hyperbolic sine of an angle &theta; in degrees.
@@ -103,11 +101,11 @@ In these rows are :
 4. **deg** :  Conversion of radians to degrees.
 5. **rad** :  Conversion of degrees to radians.
 
-- In order to run the calculator download and open the file from the `bin/` folder(for windows users with intel CPUs only).
+- In order to run the calculator download and open the file from the `bin/` folder(for ubuntu users with intel CPUs only).
 - You can copy/paste numbers from/to the calculator.  
-- For all functions except **x<sup>n</sup>**, **√**, **EXP**  you need to type or paste the number and then press the button for a result to appear(you don't need to press `=`).    
-- When you type **x<sup>n</sup>** `**` will appear when on the left you type the base and on the right the exponent and then you need to press `=` to compute.
-- When you type **√** `**(1/` will appear when on the left you type the base and on the right the exponent divided by 1 e.g. `256**(1/4)` for a root of 4 and then you need to press `=` to compute.  
+- For all functions except **x^n**, **nthrt**, **EXP**  you need to type or paste the number and then press the button for a result to appear(you don't need to press `=`).    
+- When you type **x^n** `**` will appear when on the left you type the base and on the right the exponent and then you need to press `=` to compute.
+- When you type **nthrt** `**(1/` will appear when on the left you type the base and on the right the exponent divided by 1 e.g. `256**(1/4)` for a root of 4 and then you need to press `=` to compute.  
 - When you type **EXP** `*10**` will appear when on the left you type the base and on the right the exponent e.g. `3*10**8` and then you need to press `=` to compute. 
 - For all arithmetic operations (+, -, multiplication via * and division via /) as well as **mod** and **div** you need to press `=` to get the result  
 
