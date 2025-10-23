@@ -387,6 +387,127 @@ def basepifunc():
         text_input.set("ERROR")
         calc_operator = ""
 
+# Celsius to Fahrenheit
+def ctoffunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str((9/5)*value + 32)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Fahrenheit to Celsius
+def ftocfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str((5/9)*(value - 32))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Celsius to Kelvin
+def ctokfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value + 273.15)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Kelvin to Celsius
+def ktocfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value - 273.15)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Fahrenheit to Kelvin
+def ftokfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str((value + 459.67)*(5/9))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Kelvin to Fahrenheit
+def ktoffunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(((value*5)/9) - 459.67)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Meter to Feet
+def mtoffunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value*3.2808399)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Feet to Meter
+def ftomfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value/3.2808399)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Kg to Pounds
+def ktopfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value*2.20462262)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# Pounds to Kg
+def ptokfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value/2.20462262)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+
 '''
 Variables
 '''
@@ -610,5 +731,38 @@ supers_value = Button(tk_calc, button_params, text='sigma',
 # Supergolden ratio
 superg_value = Button(tk_calc, button_params, text='psi',
                    command=lambda:button_click(str(1.46557123187676802665))).grid(row=13, column=3,columnspan=2, sticky="nsew")
+
+#--14th row--
+# Celsius to Fahrenheit
+c2f_value = Button(tk_calc, button_params, text='C2F',
+                   command=ctoffunc).grid(row=14, column=0, sticky="nsew")
+# Celsius to Kelvin
+c2k_value = Button(tk_calc, button_params, text='C2K',
+                   command=ctokfunc).grid(row=14, column=1, sticky="nsew")
+# Fahrenheit to Celsius
+f2c_value = Button(tk_calc, button_params, text='F2C',
+                   command=ftocfunc).grid(row=14, column=2, sticky="nsew")
+# Fahrenheit to Kelvin
+f2k_value = Button(tk_calc, button_params, text='F2K',
+                   command=ftokfunc).grid(row=14, column=3, sticky="nsew")
+# Kelvin to Celsius
+k2c_value = Button(tk_calc, button_params, text='K2C',
+                   command=ktocfunc).grid(row=14, column=4, sticky="nsew")
+#--15th row--
+# Kelvin to Fahrenheit
+k2f_value = Button(tk_calc, button_params, text='K2F',
+                   command=ktoffunc).grid(row=15, column=0, sticky="nsew")
+# Meter to Feet
+m2f_value = Button(tk_calc, button_params, text='M2F',
+                   command=mtoffunc).grid(row=15, column=1, sticky="nsew")
+# Feet to Meter
+f2m_value = Button(tk_calc, button_params, text='F2M',
+                   command=ftomfunc).grid(row=15, column=2, sticky="nsew")
+# Kg to Pounds
+k2p_value = Button(tk_calc, button_params, text='K2P',
+                   command=ktopfunc).grid(row=15, column=3, sticky="nsew")
+# Pounds to Kg
+p2k_value = Button(tk_calc, button_params, text='P2K',
+                   command=ptokfunc).grid(row=15, column=4, sticky="nsew")
 
 tk_calc.mainloop()
