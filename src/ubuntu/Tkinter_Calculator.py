@@ -145,18 +145,6 @@ def third_root():
         text_input.set("ERROR")
         calc_operator = ""
 
-# Function to change the sign of number
-def sign_change():
-    global calc_operator
-    try:
-        value = float(text_input.get())
-        result = str(-value)
-        text_input.set(result)
-        calc_operator = result
-    except Exception:
-        text_input.set("ERROR")
-        calc_operator = ""
-
 # Function to calculate the percentage of a number
 def percent():
     global calc_operator
@@ -387,6 +375,18 @@ def base2func():
         text_input.set("ERROR")
         calc_operator = ""
 
+#pi^x function
+def basepifunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(math.pi**(value))
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
 '''
 Variables
 '''
@@ -419,9 +419,9 @@ button_params_main = {'bd':2, 'fg':'#000', 'bg':'#BBB', 'font':big_font}
 Buttons
 '''
 #--1st row--
-# Absolute value of a number
-abs_value = Button(tk_calc, button_params, text='abs',
-                   command=lambda:button_click('abs(')).grid(row=1, column=0, sticky="nsew")
+# tau constant
+tau_value = Button(tk_calc, button_params, text='tau',
+                   command=lambda:button_click(str(math.tau))).grid(row=1, column=0, sticky="nsew")
 # Remainder of a division
 modulo = Button(tk_calc, button_params, text='mod',
                 command=lambda:button_click('%')).grid(row=1, column=1, sticky="nsew")
@@ -488,15 +488,15 @@ log_basee = Button(tk_calc, button_params, text='ln',
                    command=lnfunc).grid(row=4, column=4, sticky="nsew")
 
 #--5th row--
-# Add a left parentheses
-left_par = Button(tk_calc, button_params, text='(',
-                  command=lambda:button_click('(')).grid(row=5, column=0, sticky="nsew")
-# Add a right parentheses
-right_par = Button(tk_calc, button_params, text=')',
-                   command=lambda:button_click(')')).grid(row=5, column=1, sticky="nsew")   
-# Change the sign of a number
-signs = Button(tk_calc, button_params, text=f'+/-',
-               command=sign_change).grid(row=5, column=2, sticky="nsew")
+# pi^x
+pi_power = Button(tk_calc, button_params, text='pi^x',
+                  command=basepifunc).grid(row=5, column=0, sticky="nsew")
+# Golden ratio
+golden_ratio = Button(tk_calc, button_params, text='phi',
+                   command=lambda:button_click(str(1.618033988749894))).grid(row=5, column=1, sticky="nsew")   
+# Plastic ratio
+r_value = Button(tk_calc, button_params, text='rho',
+                   command=lambda:button_click(str(1.324717957244746))).grid(row=5, column=2, sticky="nsew")
 # Transform number to percentage
 percentage = Button(tk_calc, button_params, text='%',
                command=percent).grid(row=5, column=3, sticky="nsew")
@@ -585,5 +585,30 @@ degs = Button(tk_calc, button_params, text='deg', fg= '#BBB', bg= '#3C3636',
 # Hyperbolic tangent of an angle in degrees
 rads = Button(tk_calc, button_params, text='rad', fg= '#BBB', bg= '#3C3636',
              command=radfunc).grid(row=11, column=4, sticky="nsew")
+
+#--12th row--
+# Silver ratio
+s_value = Button(tk_calc, button_params, text='ds',
+                   command=lambda:button_click(str(2.41421356237309504880))).grid(row=12, column=0,columnspan=2, sticky="nsew")
+
+# Golden angle in radians
+g_value = Button(tk_calc, button_params, text='g',
+                   command=lambda:button_click(str(2.39996322972865332223))).grid(row=12, column=2, sticky="nsew")
+
+# Van der Pauw constant
+v_value = Button(tk_calc, button_params, text='VdP',
+                   command=lambda:button_click(str(4.53236014182719380962))).grid(row=12, column=3,columnspan=2, sticky="nsew")
+#--13th row--
+# Universal parabolic constant
+par_value = Button(tk_calc, button_params, text='P',
+                   command=lambda:button_click(str(2.29558714939263807403))).grid(row=13, column=0,columnspan=2, sticky="nsew")
+
+# Supersilver ratio
+supers_value = Button(tk_calc, button_params, text='sigma',
+                   command=lambda:button_click(str(2.20556943040059031170))).grid(row=13, column=2, sticky="nsew")
+
+# Supergolden ratio
+superg_value = Button(tk_calc, button_params, text='psi',
+                   command=lambda:button_click(str(1.46557123187676802665))).grid(row=13, column=3,columnspan=2, sticky="nsew")
 
 tk_calc.mainloop()
