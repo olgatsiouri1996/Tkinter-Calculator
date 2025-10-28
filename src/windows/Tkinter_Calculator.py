@@ -506,6 +506,31 @@ def ptokfunc():
         text_input.set("ERROR")
         calc_operator = ""
 
+# ml to oz
+def ozfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value*29.5735296)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# oz to ml
+def mlfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value/29.5735296)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+
 '''
 Variables
 '''
@@ -757,4 +782,16 @@ k2p_value = Button(tk_calc, button_params, text='K2P',
 # Pounds to Kg
 p2k_value = Button(tk_calc, button_params, text='P2K',
                    command=ptokfunc).grid(row=15, column=4, sticky="nsew")
+#--16th row--
+# ml to oz
+oz_value = Button(tk_calc, button_params, text='oz',
+                   command=ozfunc).grid(row=16, column=0, columnspan=2, sticky="nsew")
+# oz to ml
+ml_value = Button(tk_calc, button_params, text='ml',
+                   command=mlfunc).grid(row=16, column=2, columnspan=2, sticky="nsew")
+# Speed of light in a vacuum
+c_value = Button(tk_calc, button_params, text='C',
+                   command=lambda:button_click(str(299792458))).grid(row=16, column=4, sticky="nsew")
+
+
 tk_calc.mainloop()
