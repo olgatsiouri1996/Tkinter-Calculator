@@ -540,14 +540,14 @@ p = math.pi
 E = '*10**'
 
 tk_calc = Tk()
-tk_calc.configure(bg="#293C4A", bd=6)
+tk_calc.configure(bg="#293C4A", bd=10)
 tk_calc.title("Scientific Calculator")
 
 calc_operator = ""
 text_input = StringVar()
 
 text_display = Entry(tk_calc, font=('sans-serif', 10, 'bold'), textvariable=text_input,
-                     bd=5, insertwidth = 5, bg='#BBB', justify='right').grid(columnspan=6, padx = 20, pady = 15)
+                     bd=5, insertwidth = 5, bg='#BBB', justify='right', width= 80).grid(columnspan=10, padx = 20, pady = 20)
 
 button_params = {'bd':2, 'fg':'#BBB', 'bg':'#3C3636', 'font':('sans-serif', 10, 'bold')}
 button_params_main = {'bd':2, 'fg':'#000', 'bg':'#BBB', 'font':('sans-serif', 10, 'bold')}
@@ -571,227 +571,226 @@ factorial_button = Button(tk_calc, button_params, text='x!',
 # Euler's number e
 eulers_num = Button(tk_calc, button_params, text='e',
                     command=lambda:button_click(str(math.e))).grid(row=1, column=4, sticky="nsew")
-
-#--2nd row--
 # Sine of an angle in degrees
 sine = Button(tk_calc, button_params, text='sin',
-             command=trig_sin).grid(row=2, column=0, sticky="nsew")
+             command=trig_sin).grid(row=1, column=5, sticky="nsew")
 # Cosine of an angle in degrees
 cosine = Button(tk_calc, button_params, text='cos',
-             command=trig_cos).grid(row=2, column=1, sticky="nsew")
+             command=trig_cos).grid(row=1, column=6, sticky="nsew")
 # Tangent of an angle in degrees
 tangent = Button(tk_calc, button_params, text='tan',
-             command=trig_tan).grid(row=2, column=2, sticky="nsew")
+             command=trig_tan).grid(row=1, column=7, sticky="nsew")
 # Powers of 2
 two_powers = Button(tk_calc, button_params, text='2^x', font=('sans-serif', 10, 'bold'),
-                     command=base2func).grid(row=2, column=3, sticky="nsew")
-
+                     command=base2func).grid(row=1, column=8, sticky="nsew")
 # Pi(3.10...) number 
 pi_num = Button(tk_calc, button_params, text='π',
-                command=lambda:button_click(str(math.pi))).grid(row=2, column=4, sticky="nsew")
+                command=lambda:button_click(str(math.pi))).grid(row=1, column=9, sticky="nsew")
 
-#--3rd row--
+#--2nd row--
 # Power of 2
 second_power = Button(tk_calc, button_params, text='x\u00B2',
-             command=squarefunc).grid(row=3, column=0, sticky="nsew")
+             command=squarefunc).grid(row=2, column=0, sticky="nsew")
 # Power of 3
 third_power = Button(tk_calc, button_params, text='x\u00B3',
-             command=cubefunc).grid(row=3, column=1, sticky="nsew")
+             command=cubefunc).grid(row=2, column=1, sticky="nsew")
 # Power of n
 nth_power = Button(tk_calc, button_params, text='x^n',
-             command=lambda:button_click('**')).grid(row=3, column=2, sticky="nsew")
+             command=lambda:button_click('**')).grid(row=2, column=2, sticky="nsew")
 # Inverse number
 inv_power = Button(tk_calc, button_params, text='x\u207b\xb9',
-             command=invfunc).grid(row=3, column=3, sticky="nsew")
+             command=invfunc).grid(row=2, column=3, sticky="nsew")
 # Powers of 10
 tens_powers = Button(tk_calc, button_params, text='10^x', font=('sans-serif', 10, 'bold'),
-                     command=base10func).grid(row=3, column=4, sticky="nsew")
-
-#--4th row--
+                     command=base10func).grid(row=2, column=4, sticky="nsew")
 # Square root of a number
 sq_root = Button(tk_calc, button_params, text='\u00B2\u221A',
-                     command=square_root).grid(row=4, column=0, sticky="nsew")
+                     command=square_root).grid(row=2, column=5, sticky="nsew")
 # Third root of a number
 trd_root = Button(tk_calc, button_params, text='\u00B3\u221A',
-                    command=third_root).grid(row=4, column=1, sticky="nsew")
+                    command=third_root).grid(row=2, column=6, sticky="nsew")
 # nth root of a number
 nth_root = Button(tk_calc, button_params, text='\u221A',
-                  command=lambda:button_click('**(1/')).grid(row=4, column=2, sticky="nsew")
+                  command=lambda:button_click('**(1/')).grid(row=2, column=7, sticky="nsew")
 # Logarithm of a number with base 10
 log_base10 = Button(tk_calc, button_params, text='log10', font=('sans-serif', 10, 'bold'),
-                   command=log10func).grid(row=4, column=3, sticky="nsew")
+                   command=log10func).grid(row=2, column=8, sticky="nsew")
 # Logarithm of a number with base e (ln)
 log_basee = Button(tk_calc, button_params, text='ln',
-                   command=lnfunc).grid(row=4, column=4, sticky="nsew")
+                   command=lnfunc).grid(row=2, column=9, sticky="nsew")
 
-#--5th row--
+#--3nd row--
 # pi^x
 pi_power = Button(tk_calc, button_params, text='π^x',
-                  command=basepifunc).grid(row=5, column=0, sticky="nsew")
+                  command=basepifunc).grid(row=3, column=0, sticky="nsew")
 # Golden ratio
 golden_ratio = Button(tk_calc, button_params, text='φ',
-                   command=lambda:button_click(str(1.618033988749894))).grid(row=5, column=1, sticky="nsew")   
+                   command=lambda:button_click(str(1.618033988749894))).grid(row=3, column=1, sticky="nsew")   
 # Plastic ratio
 r_value = Button(tk_calc, button_params, text='ρ',
-                   command=lambda:button_click(str(1.324717957244746))).grid(row=5, column=2, sticky="nsew")
+                   command=lambda:button_click(str(1.324717957244746))).grid(row=3, column=2, sticky="nsew")
 
 # Transform number to percentage
 percentage = Button(tk_calc, button_params, text='%',
-               command=percent).grid(row=5, column=3, sticky="nsew")
+               command=percent).grid(row=3, column=3, sticky="nsew")
 
 # Logarithm of a number with base 2
 log_base2 = Button(tk_calc, button_params, text='log2', font=('sans-serif', 10, 'bold'),
-                   command=log2func).grid(row=5, column=4, sticky="nsew")
-
-#--6th row--
-button_7 = Button(tk_calc, button_params_main, text='7',
-                  command=lambda:button_click('7')).grid(row=6, column=0, sticky="nsew")
-button_8 = Button(tk_calc, button_params_main, text='8',
-                  command=lambda:button_click('8')).grid(row=6, column=1, sticky="nsew")
-button_9 = Button(tk_calc, button_params_main, text='9',
-                  command=lambda:button_click('9')).grid(row=6, column=2, sticky="nsew")
-delete_one = Button(tk_calc, bd=2, fg='#000', font=('sans-serif', 10, 'bold'),
-              text='DEL', command=button_delete, bg='#db701f').grid(row=6, column=3, sticky="nsew")
-delete_all = Button(tk_calc, bd=2, fg='#000', font=('sans-serif', 10, 'bold'),
-              text='AC', command=button_clear_all, bg='#db701f').grid(row=6, column=4, sticky="nsew")
-
-#--7th row--
-button_4 = Button(tk_calc, button_params_main, text='4',
-                  command=lambda:button_click('4')).grid(row=7, column=0, sticky="nsew")
-button_5 = Button(tk_calc, button_params_main, text='5',
-                  command=lambda:button_click('5')).grid(row=7, column=1, sticky="nsew")
-button_6 = Button(tk_calc, button_params_main, text='6',
-                  command=lambda:button_click('6')).grid(row=7, column=2, sticky="nsew")
-mul = Button(tk_calc, button_params_main, text='*',
-             command=lambda:button_click('*')).grid(row=7, column=3, sticky="nsew")
-div = Button(tk_calc, button_params_main, text='/',
-             command=lambda:button_click('/')).grid(row=7, column=4, sticky="nsew")
-
-#--8th row--
-button_1 = Button(tk_calc, button_params_main, text='1',
-                  command=lambda:button_click('1')).grid(row=8, column=0, sticky="nsew")
-button_2 = Button(tk_calc, button_params_main, text='2',
-                  command=lambda:button_click('2')).grid(row=8, column=1, sticky="nsew")
-button_3 = Button(tk_calc, button_params_main, text='3',
-                  command=lambda:button_click('3')).grid(row=8, column=2, sticky="nsew")
-add = Button(tk_calc, button_params_main, text='+',
-             command=lambda:button_click('+')).grid(row=8, column=3, sticky="nsew")
-sub = Button(tk_calc, button_params_main, text='-',
-             command=lambda:button_click('-')).grid(row=8, column=4, sticky="nsew")
-
-#--9th row--
-button_0 = Button(tk_calc, button_params_main, text='0',
-                  command=lambda:button_click('0')).grid(row=9, column=0, sticky="nsew")
-point = Button(tk_calc, button_params_main, text='.',
-               command=lambda:button_click('.')).grid(row=9, column=1, sticky="nsew")
-exp = Button(tk_calc, button_params_main, text='EXP', font=('sans-serif', 10, 'bold'),
-             command=lambda:button_click(E)).grid(row=9, column=2, sticky="nsew")
-equal = Button(tk_calc, button_params_main, text='=',
-               command=button_equal).grid(row=9, columnspan=2, column=3, sticky="nsew")
-
-#--10th row--
-# Fibonacci function
-fib = Button(tk_calc, button_params_main, text='fibo', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 10, 'bold'),
-               command=fibonacci).grid(row=10, column=0, sticky="nsew")
-# Error function
-erf = Button(tk_calc, button_params_main, text='erf', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 10, 'bold'),
-               command=erfunc).grid(row=10, column=1, sticky="nsew")
-# Calculate the function e^x
-ex = Button(tk_calc, button_params, text='e^x', fg= '#BBB', bg= '#3C3636', command=expfunc).grid(row=10, column=2, sticky="nsew")
-# Gamma function
-gam = Button(tk_calc, button_params_main, text='gamma', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 10, 'bold'),
-               command=gamma_func).grid(row=10, column=3, sticky="nsew")
-# ln Gamma function
-lgam = Button(tk_calc, button_params_main, text='lngamma', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 10, 'bold'),
-               command=lgamma_func).grid(row=10, column=4, sticky="nsew")
-
-#--11th row--
-# Hyperbolic sine of an angle in degrees
-sineh = Button(tk_calc, button_params, text='sinh', fg= '#BBB', bg= '#3C3636',
-             command=trig_sinh).grid(row=11, column=0, sticky="nsew")
-# Hyperbolic cosine of an angle in degrees
-cosineh = Button(tk_calc, button_params, text='cosh', fg= '#BBB', bg= '#3C3636',
-             command=trig_cosh).grid(row=11, column=1, sticky="nsew")
-# Hyperbolic tangent of an angle in degrees
-tangenth = Button(tk_calc, button_params, text='tanh', fg= '#BBB', bg= '#3C3636',
-             command=trig_tanh).grid(row=11, column=2, sticky="nsew")
-
-# Hyperbolic tangent of an angle in degrees
-degs = Button(tk_calc, button_params, text='deg', fg= '#BBB', bg= '#3C3636',
-             command=degfunc).grid(row=11, column=3, sticky="nsew")
-
-# Hyperbolic tangent of an angle in degrees
-rads = Button(tk_calc, button_params, text='rad', fg= '#BBB', bg= '#3C3636',
-             command=radfunc).grid(row=11, column=4, sticky="nsew")
-
-#--12th row--
+                   command=log2func).grid(row=3, column=4, sticky="nsew")
 # Silver ratio
 s_value = Button(tk_calc, button_params, text='δs',
-                   command=lambda:button_click(str(2.41421356237309504880))).grid(row=12, column=0,columnspan=2, sticky="nsew")
+                   command=lambda:button_click(str(2.41421356237309504880))).grid(row=3, column=5, sticky="nsew")
 
 # Golden angle in radians
 g_value = Button(tk_calc, button_params, text='g',
-                   command=lambda:button_click(str(2.39996322972865332223))).grid(row=12, column=2, sticky="nsew")
+                   command=lambda:button_click(str(2.39996322972865332223))).grid(row=3, column=6, sticky="nsew")
 
 # Van der Pauw constant
 v_value = Button(tk_calc, button_params, text='VdP',
-                   command=lambda:button_click(str(4.53236014182719380962))).grid(row=12, column=3,columnspan=2, sticky="nsew")
+                   command=lambda:button_click(str(4.53236014182719380962))).grid(row=3, column=7, sticky="nsew")
 
-#--13th row--
 # Universal parabolic constant
 par_value = Button(tk_calc, button_params, text='P',
-                   command=lambda:button_click(str(2.29558714939263807403))).grid(row=13, column=0,columnspan=2, sticky="nsew")
+                   command=lambda:button_click(str(2.29558714939263807403))).grid(row=3, column=8, sticky="nsew")
 
 # Supersilver ratio
 supers_value = Button(tk_calc, button_params, text='ς',
-                   command=lambda:button_click(str(2.20556943040059031170))).grid(row=13, column=2, sticky="nsew")
+                   command=lambda:button_click(str(2.20556943040059031170))).grid(row=3, column=9, sticky="nsew")
 
+#--4th row--
 # Supergolden ratio
-superg_value = Button(tk_calc, button_params, text='ψ',
-                   command=lambda:button_click(str(1.46557103187676802665))).grid(row=13, column=3,columnspan=2, sticky="nsew")
+button_0 = Button(tk_calc, button_params_main, text='0',
+                  command=lambda:button_click('0')).grid(row=4, column=0, sticky="nsew")
+button_1 = Button(tk_calc, button_params_main, text='1',
+                  command=lambda:button_click('1')).grid(row=4, column=1, sticky="nsew")
+button_2 = Button(tk_calc, button_params_main, text='2',
+                  command=lambda:button_click('2')).grid(row=4, column=2, sticky="nsew")
+button_3 = Button(tk_calc, button_params_main, text='3',
+                  command=lambda:button_click('3')).grid(row=4, column=3, sticky="nsew")
+button_4 = Button(tk_calc, button_params_main, text='4',
+                  command=lambda:button_click('4')).grid(row=4, column=4, sticky="nsew")
+button_5 = Button(tk_calc, button_params_main, text='5',
+                  command=lambda:button_click('5')).grid(row=4, column=5, sticky="nsew")
+button_6 = Button(tk_calc, button_params_main, text='6',
+                  command=lambda:button_click('6')).grid(row=4, column=6, sticky="nsew")
+button_7 = Button(tk_calc, button_params_main, text='7',
+                  command=lambda:button_click('7')).grid(row=4, column=7, sticky="nsew")
+button_8 = Button(tk_calc, button_params_main, text='8',
+                  command=lambda:button_click('8')).grid(row=4, column=8, sticky="nsew")
+button_9 = Button(tk_calc, button_params_main, text='9',
+                  command=lambda:button_click('9')).grid(row=4, column=9, sticky="nsew")
 
-#--14th row--
+#--5th row--
+add = Button(tk_calc, button_params_main, text='+',
+             command=lambda:button_click('+')).grid(row=5, column=0, sticky="nsew")
+sub = Button(tk_calc, button_params_main, text='-',
+             command=lambda:button_click('-')).grid(row=5, column=1, sticky="nsew")
+mul = Button(tk_calc, button_params_main, text='*',
+             command=lambda:button_click('*')).grid(row=5, column=2, sticky="nsew")
+div = Button(tk_calc, button_params_main, text='/',
+             command=lambda:button_click('/')).grid(row=5, column=3, sticky="nsew")
+point = Button(tk_calc, button_params_main, text='.',
+               command=lambda:button_click('.')).grid(row=5, column=4, sticky="nsew")
+exp = Button(tk_calc, button_params_main, text='EXP', font=('sans-serif', 10, 'bold'),
+             command=lambda:button_click(E)).grid(row=5, column=5, sticky="nsew")
+equal = Button(tk_calc, button_params_main, text='=',
+               command=button_equal).grid(row=5, column=6, sticky="nsew")
+delete_one = Button(tk_calc, bd=2, fg='#000', font=('sans-serif', 10, 'bold'),
+              text='DEL', command=button_delete, bg='#db701f').grid(row=5, column=7, sticky="nsew")
+delete_all = Button(tk_calc, bd=2, fg='#000', font=('sans-serif', 10, 'bold'),
+              text='AC', command=button_clear_all, bg='#db701f').grid(row=5, column=8, sticky="nsew")
+superg_value = Button(tk_calc, button_params, text='ψ',
+                   command=lambda:button_click(str(1.46557103187676802665))).grid(row=5, column=9, sticky="nsew")
+#--6th row--
+# Fibonacci function
+fib = Button(tk_calc, button_params_main, text='fibo', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 10, 'bold'),
+               command=fibonacci).grid(row=6, column=0, sticky="nsew")
+# Error function
+erf = Button(tk_calc, button_params_main, text='erf', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 10, 'bold'),
+               command=erfunc).grid(row=6, column=1, sticky="nsew")
+# Calculate the function e^x
+ex = Button(tk_calc, button_params, text='e^x', fg= '#BBB', bg= '#3C3636', command=expfunc).grid(row=6, column=2, sticky="nsew")
+# Gamma function
+gam = Button(tk_calc, button_params_main, text='gamma', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 10, 'bold'),
+               command=gamma_func).grid(row=6, column=3, sticky="nsew")
+# ln Gamma function
+lgam = Button(tk_calc, button_params_main, text='lngamma', fg= '#BBB', bg= '#3C3636', font=('sans-serif', 10, 'bold'),
+               command=lgamma_func).grid(row=6, column=4, sticky="nsew")
+# Hyperbolic sine of an angle in degrees
+sineh = Button(tk_calc, button_params, text='sinh', fg= '#BBB', bg= '#3C3636',
+             command=trig_sinh).grid(row=6, column=5, sticky="nsew")
+# Hyperbolic cosine of an angle in degrees
+cosineh = Button(tk_calc, button_params, text='cosh', fg= '#BBB', bg= '#3C3636',
+             command=trig_cosh).grid(row=6, column=6, sticky="nsew")
+# Hyperbolic tangent of an angle in degrees
+tangenth = Button(tk_calc, button_params, text='tanh', fg= '#BBB', bg= '#3C3636',
+             command=trig_tanh).grid(row=6, column=7, sticky="nsew")
+
+# Hyperbolic tangent of an angle in degrees
+degs = Button(tk_calc, button_params, text='deg', fg= '#BBB', bg= '#3C3636',
+             command=degfunc).grid(row=6, column=8, sticky="nsew")
+
+# Hyperbolic tangent of an angle in degrees
+rads = Button(tk_calc, button_params, text='rad', fg= '#BBB', bg= '#3C3636',
+             command=radfunc).grid(row=6, column=9, sticky="nsew")
+
+#--7th row--
+
 # Celsius to Fahrenheit
 c2f_value = Button(tk_calc, button_params, text='C2F',
-                   command=ctoffunc).grid(row=14, column=0, sticky="nsew")
+                   command=ctoffunc).grid(row=7, column=0, sticky="nsew")
 # Celsius to Kelvin
 c2k_value = Button(tk_calc, button_params, text='C2K',
-                   command=ctokfunc).grid(row=14, column=1, sticky="nsew")
+                   command=ctokfunc).grid(row=7, column=1, sticky="nsew")
 # Fahrenheit to Celsius
 f2c_value = Button(tk_calc, button_params, text='F2C',
-                   command=ftocfunc).grid(row=14, column=2, sticky="nsew")
+                   command=ftocfunc).grid(row=7, column=2, sticky="nsew")
 # Fahrenheit to Kelvin
 f2k_value = Button(tk_calc, button_params, text='F2K',
-                   command=ftokfunc).grid(row=14, column=3, sticky="nsew")
+                   command=ftokfunc).grid(row=7, column=3, sticky="nsew")
 # Kelvin to Celsius
 k2c_value = Button(tk_calc, button_params, text='K2C',
-                   command=ktocfunc).grid(row=14, column=4, sticky="nsew")
-#--15th row--
+                   command=ktocfunc).grid(row=7, column=4, sticky="nsew")
 # Kelvin to Fahrenheit
 k2f_value = Button(tk_calc, button_params, text='K2F',
-                   command=ktoffunc).grid(row=15, column=0, sticky="nsew")
+                   command=ktoffunc).grid(row=7, column=5, sticky="nsew")
 # Meter to Feet
 m2f_value = Button(tk_calc, button_params, text='M2F',
-                   command=mtoffunc).grid(row=15, column=1, sticky="nsew")
+                   command=mtoffunc).grid(row=7, column=6, sticky="nsew")
 # Feet to Meter
 f2m_value = Button(tk_calc, button_params, text='F2M',
-                   command=ftomfunc).grid(row=15, column=2, sticky="nsew")
+                   command=ftomfunc).grid(row=7, column=7, sticky="nsew")
 # Kg to Pounds
 k2p_value = Button(tk_calc, button_params, text='K2P',
-                   command=ktopfunc).grid(row=15, column=3, sticky="nsew")
-# Pounds to Kg
+                   command=ktopfunc).grid(row=7, column=8, sticky="nsew")
 p2k_value = Button(tk_calc, button_params, text='P2K',
-                   command=ptokfunc).grid(row=15, column=4, sticky="nsew")
-#--16th row--
+                   command=ptokfunc).grid(row=7, column=9, sticky="nsew")
+#--8th row--
+# Pounds to Kg
 # ml to oz
 oz_value = Button(tk_calc, button_params, text='oz',
-                   command=ozfunc).grid(row=16, column=0, columnspan=2, sticky="nsew")
+                   command=ozfunc).grid(row=8, column=0, sticky="nsew")
 # oz to ml
 ml_value = Button(tk_calc, button_params, text='ml',
-                   command=mlfunc).grid(row=16, column=2, columnspan=2, sticky="nsew")
+                   command=mlfunc).grid(row=8, column=1, sticky="nsew")
 # Speed of light in a vacuum
 c_value = Button(tk_calc, button_params, text='C',
-                   command=lambda:button_click(str(299792458))).grid(row=16, column=4, sticky="nsew")
-
+                   command=lambda:button_click(str(299792458))).grid(row=8, column=2, sticky="nsew")
+# Faraday constant
+fara_value = Button(tk_calc, button_params, text='F',
+                   command=lambda:button_click(str(96485.3321233100184))).grid(row=8, column=3, sticky="nsew")
+# von Klitzing constant
+rsi_value = Button(tk_calc, button_params, text='R(SI)',
+                   command=lambda:button_click(str(8.31446261815324))).grid(row=8, column=4, sticky="nsew")
+rcal_value = Button(tk_calc, button_params, text='R(cal)',
+                   command=lambda:button_click(str(1.98720425864083))).grid(row=8, column=5, sticky="nsew")
+rlatm_value = Button(tk_calc, button_params, text='R(L*atm)',
+                   command=lambda:button_click(str(0.082057366080960))).grid(row=8, column=6, sticky="nsew")
+rlbar_value = Button(tk_calc, button_params, text='R(L*bar)',
+                   command=lambda:button_click(str(0.0831446261815324))).grid(row=8, column=7, sticky="nsew")
+rltorr_value = Button(tk_calc, button_params, text='R(L*torr)',
+                   command=lambda:button_click(str(554.984319180))).grid(row=8, column=8, sticky="nsew")
+rm3_value = Button(tk_calc, button_params, text='R(m\u00B3)',
+                   command=lambda:button_click(str(0.0000820573660809596))).grid(row=8, column=9, sticky="nsew")
 
 tk_calc.mainloop()
