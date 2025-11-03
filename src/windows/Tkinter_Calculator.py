@@ -530,6 +530,29 @@ def mlfunc():
         text_input.set("ERROR")
         calc_operator = ""
 
+# cal to joule
+def c2jfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value*4.184)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
+
+# cal to joule
+def j2cfunc():
+    global calc_operator
+    try:
+        value = float(text_input.get())
+        result = str(value/4.184)
+        text_input.set(result)
+        calc_operator = result
+    except Exception:
+        text_input.set("ERROR")
+        calc_operator = ""
 
 '''
 Variables
@@ -773,24 +796,46 @@ oz_value = Button(tk_calc, button_params, text='oz',
 # oz to ml
 ml_value = Button(tk_calc, button_params, text='ml',
                    command=mlfunc).grid(row=8, column=1, sticky="nsew")
-# Speed of light in a vacuum
-c_value = Button(tk_calc, button_params, text='C',
-                   command=lambda:button_click(str(299792458))).grid(row=8, column=2, sticky="nsew")
-# Faraday constant
-fara_value = Button(tk_calc, button_params, text='F',
-                   command=lambda:button_click(str(96485.3321233100184))).grid(row=8, column=3, sticky="nsew")
 # von Klitzing constant
 rsi_value = Button(tk_calc, button_params, text='R(SI)',
-                   command=lambda:button_click(str(8.31446261815324))).grid(row=8, column=4, sticky="nsew")
+                   command=lambda:button_click(str(8.31446261815324))).grid(row=8, column=2, sticky="nsew")
 rcal_value = Button(tk_calc, button_params, text='R(cal)',
-                   command=lambda:button_click(str(1.98720425864083))).grid(row=8, column=5, sticky="nsew")
+                   command=lambda:button_click(str(1.98720425864083))).grid(row=8, column=3, sticky="nsew")
 rlatm_value = Button(tk_calc, button_params, text='R(L*atm)',
-                   command=lambda:button_click(str(0.082057366080960))).grid(row=8, column=6, sticky="nsew")
+                   command=lambda:button_click(str(0.082057366080960))).grid(row=8, column=4, sticky="nsew")
 rlbar_value = Button(tk_calc, button_params, text='R(L*bar)',
-                   command=lambda:button_click(str(0.0831446261815324))).grid(row=8, column=7, sticky="nsew")
+                   command=lambda:button_click(str(0.0831446261815324))).grid(row=8, column=5, sticky="nsew")
 rltorr_value = Button(tk_calc, button_params, text='R(L*torr)',
-                   command=lambda:button_click(str(554.984319180))).grid(row=8, column=8, sticky="nsew")
-rm3_value = Button(tk_calc, button_params, text='R(m\u00B3)',
-                   command=lambda:button_click(str(0.0000820573660809596))).grid(row=8, column=9, sticky="nsew")
+                   command=lambda:button_click(str(554.984319180))).grid(row=8, column=6, sticky="nsew")
+rm3atm_value = Button(tk_calc, button_params, text='R(m³·atm)',
+                   command=lambda:button_click(str(0.0000820573660809596))).grid(row=8, column=7, sticky="nsew")
+rm3bar_value = Button(tk_calc, button_params, text='R(m³·bar)',
+                   command=lambda:button_click(str(0.0000831446261815324))).grid(row=8, column=8, sticky="nsew")
+rm3torr_value = Button(tk_calc, button_params, text='R(m³·torr)',
+                   command=lambda:button_click(str(0.062363598418483226))).grid(row=8, column=9, sticky="nsew")
 
+#--9th row--
+rerg_value = Button(tk_calc, button_params, text='R(erg)',
+                   command=lambda:button_click(str(0.000000831446261815324))).grid(row=9, column=0, sticky="nsew")
+# Speed of light in a vacuum
+c_value = Button(tk_calc, button_params, text='C',
+                   command=lambda:button_click(str(299792458))).grid(row=9, column=1, sticky="nsew")
+# 1 second definition as the duration of 9192631770 periods with transitions between the two hyperfine levels of the ground state of the caesium-133 atom
+dtcs_value = Button(tk_calc, button_params, text='ΔtCs',
+                   command=lambda:button_click(str(9192631770))).grid(row=9, column=2, sticky="nsew")
+# Faraday constant
+fara_value = Button(tk_calc, button_params, text='F',
+                   command=lambda:button_click(str(96485.3321233100184))).grid(row=9, column=3, sticky="nsew")
+# Standard acceleration of gravity
+gas_value = Button(tk_calc, button_params, text='g(m/s²)',
+                   command=lambda:button_click(str(9.80665))).grid(row=9, column=4, sticky="nsew")
+# von Klitzing constant
+vonkli_value = Button(tk_calc, button_params, text='Rₖ',
+                   command=lambda:button_click(str(25812.80745))).grid(row=9, column=5, sticky="nsew")
+# Calories to Joule conversion
+c2j_value = Button(tk_calc, button_params, text='cal2joule',
+                   command=c2jfunc).grid(row=9, column=6, columnspan=2, sticky="nsew")
+# Joule to Calories conversion
+j2c_value = Button(tk_calc, button_params, text='joule2cal',
+                   command=j2cfunc).grid(row=9, column=8, columnspan=2, sticky="nsew")
 tk_calc.mainloop()
