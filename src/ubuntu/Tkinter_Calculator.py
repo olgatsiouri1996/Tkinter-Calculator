@@ -796,7 +796,7 @@ oz_value = Button(tk_calc, button_params, text='oz',
 # oz to ml
 ml_value = Button(tk_calc, button_params, text='ml',
                    command=mlfunc).grid(row=8, column=1, sticky="nsew")
-# von Klitzing constant
+# Gas constants
 rsi_value = Button(tk_calc, button_params, text='R(SI)',
                    command=lambda:button_click(str(8.31446261815324))).grid(row=8, column=2, sticky="nsew")
 rcal_value = Button(tk_calc, button_params, text='R(cal)',
@@ -821,7 +821,7 @@ rerg_value = Button(tk_calc, button_params, text='R(erg)',
 c_value = Button(tk_calc, button_params, text='C',
                    command=lambda:button_click(str(299792458))).grid(row=9, column=1, sticky="nsew")
 # 1 second definition as the duration of 9192631770 periods with transitions between the two hyperfine levels of the ground state of the caesium-133 atom
-dtcs_value = Button(tk_calc, button_params, text='ΔtCs',
+dtcs_value = Button(tk_calc, button_params, text='DtCs',
                    command=lambda:button_click(str(9192631770))).grid(row=9, column=2, sticky="nsew")
 # Faraday constant
 fara_value = Button(tk_calc, button_params, text='F',

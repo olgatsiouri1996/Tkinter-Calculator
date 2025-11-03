@@ -796,7 +796,7 @@ oz_value = Button(tk_calc, button_params, text='oz',
 # oz to ml
 ml_value = Button(tk_calc, button_params, text='ml',
                    command=mlfunc).grid(row=8, column=1, sticky="nsew")
-# von Klitzing constant
+# Gas constant
 rsi_value = Button(tk_calc, button_params, text='R(SI)',
                    command=lambda:button_click(str(8.31446261815324))).grid(row=8, column=2, sticky="nsew")
 rcal_value = Button(tk_calc, button_params, text='R(cal)',
